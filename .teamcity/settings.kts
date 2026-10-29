@@ -14,11 +14,11 @@ template(), and subProject() methods respectively.
 
 To debug settings scripts in command-line, run the
 
-    mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
+mvnDebug org.jetbrains.teamcity:teamcity-configs-maven-plugin:generate
 
 command and attach your debugger to the port 8000.
 
-To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
+To debug in IntelliJ IDEA, open the 'Maven Projects' tool window (View
 -> Tool Windows -> Maven Projects), find the generate task node
 (Plugins -> teamcity-configs -> teamcity-configs:generate), the
 'Debug' option is available in the context menu for the task.
@@ -27,12 +27,12 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2026.2"
 
 project {
-
     buildType(Build)
 }
 
 object Build : BuildType({
     name = "Build"
+    artifactRules = "target/*.jar"
 
     vcs {
         root(DslContext.settingsRoot)
